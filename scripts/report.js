@@ -4,29 +4,30 @@ var generateReport = function () {
     var currentStore = stores[key];
     var storeName = currentStore.storeName.toUpperCase();
     console.log('Current store name is: ' + storeName);
-    var h = document.createElement('h1');
+    var article = document.createElement('article');
+    var h = document.createElement('h2');
     var hText = document.createTextNode(storeName);
     h.appendChild(hText);
-    el.appendChild(h);//append store name//END store name heading
+    article.appendChild(h);//append store name //END store name heading
     var minCustP = document.createElement('p');//CREATE min cust list item
     var minCustText = document.createTextNode('Minimum Customers: ' + currentStore.minCustomers);
     console.log('minimum customers:' + currentStore.minCustomers);
     minCustP.appendChild(minCustText);
-    el.appendChild(minCustP);//END create min customer list item
+    article.appendChild(minCustP);//END create min customer list item
     var maxCustP = document.createElement('p');//CREATE max cust list item
     var maxCustText = document.createTextNode('Maximum Customers: ' + currentStore.maxCustomers);
     console.log('maximum customers:' + currentStore.maxCustomers);
     maxCustP.appendChild(maxCustText);
-    el.appendChild(maxCustP);//END create min customer list item
+    article.appendChild(maxCustP);//END create min customer list item
     var aveCookieP = document.createElement('p');//CREATE ave cookie sale list item
     var aveCookieText = document.createTextNode('Average Cookie Sale per customer: ' + currentStore.averageCookieSale);
     console.log('average cookie sale per customer:' + currentStore.averageCookieSale);
     aveCookieP.appendChild(aveCookieText);
-    el.appendChild(aveCookieP);//END create min customer list item
+    article.appendChild(aveCookieP);//END create min customer list item
     var listTitleH3 = document.createElement('h3');//CREATE List Title
     var listTitleText = document.createTextNode('Hourly Average Sales:');
     listTitleH3.appendChild(listTitleText);
-    el.appendChild(listTitleH3);
+    article.appendChild(listTitleH3);
     var ul = document.createElement('ul');//CREATE list
     currentStore.getCustomers();
     currentStore.getHourlyCookies();
@@ -38,8 +39,9 @@ var generateReport = function () {
       li.appendChild(liText);
       ul.appendChild(li);
     };
-
-    el.appendChild(ul);//append list
+    article.appendChild(ul);//append list
+    article.className += 'column';
+    el.appendChild(article);
   }
 };
 
