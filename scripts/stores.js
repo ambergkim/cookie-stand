@@ -1,6 +1,8 @@
 var stores = {
   firstAndPike: {
     storeName: 'First And Pike',
+    address: '1212 1st ave N, Seattle, WA 98118',
+    phone: '(206)123-4567',
     minCustomers: 23,
     maxCustomers: 65,
     averageCookieSale: 6.3,
@@ -24,6 +26,8 @@ var stores = {
   },
   seaTacAirport: {
     storeName: 'SeaTac Airport',
+    address: '14643 14th st, Seattle, WA 98274',
+    phone: '(206)123-4589',
     minCustomers: 3,
     maxCustomers: 24,
     averageCookieSale: 1.2,
@@ -48,6 +52,8 @@ var stores = {
   },
   seattleCenter: {
     storeName: 'Seattle Center',
+    address: '12354 44th ave NE, Seattle, WA 98118',
+    phone: '(206)123-4285',
     minCustomers: 11,
     maxCustomers: 38,
     averageCookieSale: 3.7,
@@ -72,6 +78,8 @@ var stores = {
   },
   capitolHill: {
     storeName: 'Capitol Hill',
+    address: '123 5th ave W, Seattle, WA 98275',
+    phone: '(206)123-1948',
     minCustomers: 20,
     maxCustomers: 38,
     averageCookieSale: 2.3,
@@ -96,6 +104,8 @@ var stores = {
   },
   alki: {
     storeName: 'Alki',
+    address: '12354 6th ave SE, Seattle, WA 98240',
+    phone: '(206)123-4769',
     minCustomers: 2,
     maxCustomers: 16,
     averageCookieSale: 4.6,
