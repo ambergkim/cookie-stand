@@ -40,7 +40,7 @@ var generateReport = function () {
       ul.appendChild(li);
     };
     div.appendChild(ul);//append list
-    div.className += 'store';
+    div.className += 'sales';
     el.appendChild(div);
   }
 };
