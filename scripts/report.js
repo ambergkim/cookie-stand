@@ -23,6 +23,10 @@ var generateReport = function () {
     console.log('average cookie sale per customer:' + currentStore.averageCookieSale);
     aveCookieP.appendChild(aveCookieText);
     el.appendChild(aveCookieP);//END create min customer list item
+    var listTitleH3 = document.createElement('h3');//CREATE List Title
+    var listTitleText = document.createTextNode('Hourly Average Sales:');
+    listTitleH3.appendChild(listTitleText);
+    el.appendChild(listTitleH3);
     var ul = document.createElement('ul');//CREATE list
     currentStore.getCustomers();
     currentStore.getHourlyCookies();

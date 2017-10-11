@@ -1,10 +1,31 @@
-h1 {
-  text-align: center;
+body {
+  background: black;
+  color: white;
 }
 
-article {
-  background: #efefef;
-  margin: 1em;
-  padding: 0.5em;
-  border: 1px solid black;
+header {
+  background-image: url(../images/girl.jpg);
+  background-size: cover;
+  width: 100%;
+  margin: 0;
+}
+
+nav {
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.featured-image {
+  width: 90%;
+}
+
+#section1 {
+
+  background-size: cover;
+}
+
+#logo {
+  display: block;
+  margin: 0 auto;
+  background: none;
 }
