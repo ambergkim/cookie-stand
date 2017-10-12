@@ -50,6 +50,8 @@ h3 {
 
 article {
   border: solid 2px #725f35;
+  border-top-right-radius: 25%;
+  border-bottom-left-radius: 25%;
   padding: 3% 5% 10% 5%;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: -5px 5px 5px black;
@@ -80,6 +82,22 @@ button:hover, .button:hover {
 a:link {
   color: #a45234;
   text-decoration: none;
+}
+
+table {
+  margin-bottom: 3em;
+}
+
+table, td {
+  border: 1px solid #a8a8a8;
+}
+
+thead {
+  background-color: #11120c;
+}
+
+tr:hover {
+  background-color: #40333e;
 }
 
 footer {
@@ -121,8 +139,9 @@ input, textarea {
   flex-direction: column;
 }
 
-.store, .sales {
+.store {
   border: solid 2px #725f35;
+  border-radius: 1em;
   padding: 0.25em 1em 1em;
   margin: 1em;
   box-shadow: -5px 5px 10px black;
@@ -240,6 +259,9 @@ input, textarea {
   }
   .sales {
     width: 30%;
+  }
+  .sectionGreen {
+    flex-direction: row-reverse;
   }
   #logo {
     width: 150px;
