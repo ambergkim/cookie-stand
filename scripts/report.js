@@ -2,7 +2,7 @@ var head = document.getElementById('tableHead');
 
 var fullTotals = [];
 
-var createTableHeader = function() {
+var createTableHeader = function(tableHeader) {
   var headRow = document.createElement('tr');
   var emptyCol = document.createElement('td');
   headRow.appendChild(emptyCol);
@@ -17,7 +17,7 @@ var createTableHeader = function() {
   var totalText = document.createTextNode('Daily Location Total');
   totalCell.appendChild(totalText);
   headRow.appendChild(totalCell);
-  head.appendChild(headRow);
+  tableHeader.appendChild(headRow);
 };
 
 //TABLE BODY
@@ -95,10 +95,61 @@ var createTableFooter = function(){
   tableFoot.appendChild(tr);
 };
 
-createTableHeader();
+var table2El = document.getElementById('table2Head');
+
+var generateCookieTosserReport = function() {
+
+};
+
+createTableHeader(head);
 
 for (key in stores) {
   storeReport(stores[key]);
 };
 
 createTableFooter();
+
+var table2Head = document.getElementById('table2Head');
+createTableHeader(table2Head);
+
+var table2Body = document.getElementById('table2Body');
+
+var tosserReport = function (currentStore){
+  var storeName = currentStore.storeName;
+  console.log('Current store name is: ' + storeName);
+  var currentStoreRow = document.createElement('tr');
+  var nameTd = document.createElement('td');
+  var nameText = document.createTextNode(storeName);
+  nameTd.appendChild(nameText);
+  currentStoreRow.appendChild(nameTd);
+  currentStore.getCustomers();
+  currentStore.getHourlyCookies();
+  var dailyTotal = 0;
+  for (var i = 0; i < 15; i++){
+    var hourCustomers = Math.round((currentStore.hourlyCustomers[i]));
+    var hourTossers = Math.ceil(hourCustomers / 20);
+    if (hourTossers === 1) {
+      hourTossers = 2;
+    }
+    if (dailyTotal < hourTossers) {
+      dailyTotal = hourTossers;
+    };
+    console.log('Daily Total Tossers: ' + dailyTotal);
+    console.log('iteration ' + i + ' hour Cookies: ' + hourTossers);
+    var td = document.createElement('td');
+    var tdText = document.createTextNode(hourTossers);
+    td.appendChild(tdText);
+    currentStoreRow.appendChild(td);
+  };
+  var totalTd = document.createElement('td');
+  var totalText = document.createTextNode(dailyTotal);
+  totalTd.appendChild(totalText);
+  currentStoreRow.appendChild(totalTd);
+  table2Body.appendChild(currentStoreRow);
+  fullTotals.push(dailyTotal);
+  console.log('full totals: ' + fullTotals);
+};
+
+for (key in stores) {
+  tosserReport(stores[key]);
+};

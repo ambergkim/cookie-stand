@@ -82,6 +82,10 @@ a:link {
   text-decoration: none;
 }
 
+table {
+  margin-bottom: 3em;
+}
+
 table, td {
   border: 1px solid #a8a8a8;
 }
