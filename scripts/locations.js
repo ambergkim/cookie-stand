@@ -1,4 +1,4 @@
-var generateReport = function () {
+var generateLocations = function () {
   var el = document.getElementById('stores');
   for (key in stores) {
     var currentStore = stores[key];
@@ -24,4 +24,4 @@ var generateReport = function () {
   }
 };
 
-generateReport();
+generateLocations();

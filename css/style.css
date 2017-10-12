@@ -82,6 +82,18 @@ a:link {
   text-decoration: none;
 }
 
+table, td {
+  border: 1px solid #a8a8a8;
+}
+
+thead {
+  background-color: #11120c;
+}
+
+tr:hover {
+  background-color: #40333e;
+}
+
 footer {
   background-color: #11120c;
   padding: 1em;
