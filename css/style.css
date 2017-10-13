@@ -96,8 +96,16 @@ thead {
   background-color: #11120c;
 }
 
+tr:nth-child(even){
+  background-color: #3a3039;
+}
+
 tr:hover {
-  background-color: #40333e;
+  background-color: #262026;
+}
+
+tfoot tr {
+  background-color: #11120c;
 }
 
 footer {
