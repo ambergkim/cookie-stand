@@ -10,7 +10,7 @@ var stores = {
     getCustomers: function() {
       this.hourlyCustomers = [];//reset hourly customers
       for (i = 0;i < 15; i++){
-        this.hourlyCustomers.push(Math.floor(Math.random() * 65));
+        this.hourlyCustomers.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers));
         console.log(this.hourlyCustomers);
       }
     },
@@ -34,7 +34,7 @@ var stores = {
     getCustomers: function() {
       this.hourlyCustomers = [];//reset hourly customers
       for (i = 0;i < 15; i++){
-        this.hourlyCustomers.push(Math.floor(Math.random() * 65));
+        this.hourlyCustomers.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers));
         console.log(this.hourlyCustomers);
       }
     },
@@ -58,7 +58,7 @@ var stores = {
     getCustomers: function() {
       this.hourlyCustomers = [];//reset hourly customers
       for (i = 0;i < 15; i++){
-        this.hourlyCustomers.push(Math.floor(Math.random() * 65));
+        this.hourlyCustomers.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers));
         console.log(this.hourlyCustomers);
       }
     },
@@ -82,7 +82,7 @@ var stores = {
     getCustomers: function() {
       this.hourlyCustomers = [];//reset hourly customers
       for (i = 0;i < 15; i++){
-        this.hourlyCustomers.push(Math.floor(Math.random() * 65));
+        this.hourlyCustomers.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers));
         console.log(this.hourlyCustomers);
       }
     },
@@ -106,7 +106,7 @@ var stores = {
     getCustomers: function() {
       this.hourlyCustomers = [];//reset hourly customers
       for (i = 0;i < 15; i++){
-        this.hourlyCustomers.push(Math.floor(Math.random() * 65));
+        this.hourlyCustomers.push(Math.floor(Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers));
         console.log(this.hourlyCustomers);
       }
     },
