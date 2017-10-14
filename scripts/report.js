@@ -126,7 +126,7 @@ var tosserReport = function (currentStore){
   for (var i = 0; i < 15; i++){
     var hourCustomers = Math.round((currentStore.hourlyCustomers[i]));
     var hourTossers = Math.ceil(hourCustomers / 20);//calculate needed tossers
-    if (hourTossers === 1) {//minimum tossers is 2
+    if (hourTossers === 1 ||  hourTossers === 0) {//minimum tossers is 2
       hourTossers = 2;
     }
     if (dailyTotal < hourTossers) {//find the highest tossers needed at one point
