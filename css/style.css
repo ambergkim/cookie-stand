@@ -86,18 +86,32 @@ a:link {
 
 table {
   margin-bottom: 3em;
+  empty-cells: hide;
+  border-spacing: 3px;
 }
 
-table, td {
+td {
   border: 1px solid #a8a8a8;
+}
+
+td {
+  padding: 0.5em;
 }
 
 thead {
   background-color: #11120c;
 }
 
+tr:nth-child(even){
+  background-color: #3a3039;
+}
+
 tr:hover {
-  background-color: #40333e;
+  background-color: #262026;
+}
+
+tfoot tr {
+  background-color: #11120c;
 }
 
 footer {
