@@ -86,10 +86,16 @@ a:link {
 
 table {
   margin-bottom: 3em;
+  empty-cells: hide;
+  border-spacing: 3px;
 }
 
-table, td {
+td {
   border: 1px solid #a8a8a8;
+}
+
+td {
+  padding: 0.5em;
 }
 
 thead {
