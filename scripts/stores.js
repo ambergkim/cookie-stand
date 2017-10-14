@@ -11,7 +11,7 @@ function Store(name, address, phone, minCustomers, maxCustomers, averageCookieSa
   this.getCustomers = function() {
     this.hourlyCustomers = [];//reset hourly customers
     for (i = 0;i < this.hoursOpen.length; i++){
-      this.hourlyCustomers.push((Math.random() * 100));
+      this.hourlyCustomers.push((Math.random() * (this.maxCustomers - this.minCustomers + 1) + this.minCustomers));
       console.log(this.hourlyCustomers);
     }
   };
