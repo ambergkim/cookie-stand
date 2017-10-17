@@ -286,7 +286,7 @@ input, textarea {
   legend {
     font-size: 2em;
   }
-  #store-info {
+#store-form {
     width: 50%;
     margin: auto;
   }

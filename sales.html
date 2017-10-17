@@ -16,7 +16,7 @@
       <h1 class="sHeader">Salmon Cookies Store Reports</h1>
     </header>
     <section class="sectionGreen">
-      <form id="store-info">
+      <form id="store-form">
         <fieldset>
           <legend>Basic Store info</legend>
           <label for="name">Store Name:</label>
@@ -26,12 +26,12 @@
           <label for="phone">Phone Number:</label>
           <input type="text" id="phone" name="phone" placeholder="Phone Number">
           <label for="min_customers">Minimum Number of Customers Per Hour:</label>
-          <input type="number" id="min_customers" placeholder="Minimum Customers Per Hour">
+          <input type="number" id="min_customers" name="min_customers" placeholder="Minimum Customers Per Hour">
           <label for="max_customers">Maximum Number of Customers Per Hour:</label>
-          <input type="number" id="max_customers" placeholder="Maximum Customers Per Hour">
+          <input type="number" id="max_customers" name="max_customers" placeholder="Maximum Customers Per Hour">
           <label for="average_sales">Average Cookie Sales Per Hour:</label>
-          <input type="number" id="average_sales" placeholder="Average Cookie Sale Per Hour">
-          <button class="formButton" type="submit" form="storeInfoForm" value="submit">Add Store</button>
+          <input type="number" id="average_sales" name="average_sales" placeholder="Average Cookie Sale Per Hour">
+          <button id="store-form-button" class="formButton" type="submit" form="store-form" value="submit">Add Store</button>
         </fieldset>
       </form>
     </section>

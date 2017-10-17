@@ -41,10 +41,12 @@ function Store(name, address, phone, minCustomers, maxCustomers, averageCookieSa
       console.log('Random Number ' + randomNum);
       this.hourlyCustomers.push(randomNum);
     }
+    console.log('Hourly Customers: ' + this.hourlyCustomers);
   };
   this.getHourlyCookies = function() {
     this.hourlyCookies = []; //reset hourly cookie sales
     for (i = 0; i < 15; i++) {
+      console.log('average cookie sale: ' + this.averageCookieSale);
       var cookies = Math.floor(this.averageCookieSale * this.hourlyCustomers[i]);
       console.log('Hourly Cookies ' + cookies);
       this.hourlyCookies.push(cookies);
@@ -62,6 +64,7 @@ function Store(name, address, phone, minCustomers, maxCustomers, averageCookieSa
       console.log('hourly totals array ' + hourlyTotals);
     }
     this.hourlyCookies.push(this.dailyTotal);
+    console.log('Hourly Cookies: ' + this.hourlyCookies);
   };
   this.render = function() {
     this.getCustomers();
@@ -94,6 +97,7 @@ Stores.seattleCenter.render();
 Stores.capitolHill.render();
 Stores.alki.render();
 
+//generate table footer
 var createTableFooter = function() {
   var footTr = document.createElement('tr');
   var footTd = document.createElement('td');
@@ -115,3 +119,45 @@ var createTableFooter = function() {
 };
 
 createTableFooter();
+
+//store form
+var storeForm = document.getElementById('store-form');
+//event submission
+function storeFormSubmit(event){
+  console.log('event ' + event);
+  event.preventDefault();
+
+  if (!event.target.store_name.value || !event.target.address.value || !event.target.phone.value || !event.target.min_customers.value || !event.target.max_customers.value || !event.target.average_sales) {
+    alert('Please fill out all the fields!');
+    console.log('invalid form submission');
+  };
+  var storeName = event.target.store_name.value;
+  console.log('store name ' + storeName);
+  var address = event.target.address.value;
+  console.log('address' + address);
+  var phone = event.target.phone.value;
+  console.log('phone ' + phone);
+  var minCustomers = parseInt(event.target.min_customers.value);
+  var maxCustomers = parseInt(event.target.max_customers.value);
+  var averageCookieSale = parseInt(event.target.average_sales.value);
+
+  var NewStore = new Store(storeName, address, phone, minCustomers, maxCustomers, averageCookieSale);
+
+  console.log('Inside NewStore Object' + NewStore);
+
+  NewStore.render();
+
+  event.target.store_name.value = null;
+  event.target.address.value = null;
+  event.target.phone.value = null;
+  event.target.min_customers.value = null;
+  event.target.max_customers.value = null;
+  event.target.average_sales = null;
+
+  tableFoot.deleteRow(0);
+  createTableFooter();
+
+};
+//Event Listener
+storeForm.addEventListener('submit', storeFormSubmit);
+//Clear List or Reset Button
