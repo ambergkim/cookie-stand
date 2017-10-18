@@ -38,22 +38,16 @@ function Store(name, address, phone, minCustomers, maxCustomers, averageCookieSa
     this.hourlyCustomers = [];//reset hourly customers
     for (i = 0;i < 15; i++){
       var randomNum = Math.floor((Math.random() * (this.maxCustomers - this.minCustomers + 1)) + this.minCustomers);
-      console.log('Random Number ' + randomNum);
       this.hourlyCustomers.push(randomNum);
     }
-    console.log('Hourly Customers: ' + this.hourlyCustomers);
   };
   this.getHourlyCookies = function() {
     this.hourlyCookies = []; //reset hourly cookie sales
     for (i = 0; i < 15; i++) {
-      console.log('average cookie sale: ' + this.averageCookieSale);
       var cookies = Math.floor(this.averageCookieSale * this.hourlyCustomers[i]);
-      console.log('Hourly Cookies ' + cookies);
       this.hourlyCookies.push(cookies);
       this.dailyTotal += cookies;
-      console.log('Daily Total ' + this.dailyTotal);
       if (hourlyTotals.length < 15) {
-        console.log('hourly totals length ' + hourlyTotals.length);
         hourlyTotals.push(cookies);
         allStoreTotal += cookies;
       } else {
@@ -61,10 +55,8 @@ function Store(name, address, phone, minCustomers, maxCustomers, averageCookieSa
         allStoreTotal += cookies;
       }
       hourlyTotals.push(allStoreTotal);
-      console.log('hourly totals array ' + hourlyTotals);
     }
     this.hourlyCookies.push(this.dailyTotal);
-    console.log('Hourly Cookies: ' + this.hourlyCookies);
   };
   this.render = function() {
     this.getCustomers();
@@ -91,11 +83,9 @@ Stores.seattleCenter = new Store('Seattle Center', '12354 44th ave NE, Seattle, 
 Stores.capitolHill = new Store('Capitol Hill', '123 5th ave W, Seattle, WA 98275', '(206)123-1948', 20, 38, 2.3);
 Stores.alki = new Store('Alki', '12354 6th ave SE, Seattle, WA 98240', '(206)123-4769', 2, 16, 4.6);
 
-Stores.firstAndPike.render();
-Stores.seaTacAirport.render();
-Stores.seattleCenter.render();
-Stores.capitolHill.render();
-Stores.alki.render();
+for (key in Stores) {
+  Stores[key].render();
+}
 
 //generate table footer
 var createTableFooter = function() {
@@ -124,26 +114,19 @@ createTableFooter();
 var storeForm = document.getElementById('store-form');
 //event submission
 function storeFormSubmit(event){
-  console.log('event ' + event);
   event.preventDefault();
 
   if (!event.target.store_name.value || !event.target.address.value || !event.target.phone.value || !event.target.min_customers.value || !event.target.max_customers.value || !event.target.average_sales) {
     alert('Please fill out all the fields!');
-    console.log('invalid form submission');
   };
   var storeName = event.target.store_name.value;
-  console.log('store name ' + storeName);
   var address = event.target.address.value;
-  console.log('address' + address);
   var phone = event.target.phone.value;
-  console.log('phone ' + phone);
   var minCustomers = parseInt(event.target.min_customers.value);
   var maxCustomers = parseInt(event.target.max_customers.value);
   var averageCookieSale = parseInt(event.target.average_sales.value);
 
   var NewStore = new Store(storeName, address, phone, minCustomers, maxCustomers, averageCookieSale);
-
-  console.log('Inside NewStore Object' + NewStore);
 
   NewStore.render();
 
@@ -167,11 +150,8 @@ resetTable.addEventListener('click', function() {
   for (key in Stores) {
     i++;
   }
-  console.log('Stores length: ' + i);
-  console.log('table length: ' + tableBody.childNodes.length);
   for (var j = tableBody.childNodes.length; j > i + 1; j--) {
     tableBody.removeChild(tableBody.lastChild);
-    console.log('j ' + 1);
   }
 }
 );
