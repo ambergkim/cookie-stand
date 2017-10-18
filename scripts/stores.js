@@ -24,10 +24,8 @@ var createTableHeader = function() {
 
 createTableHeader();
 
-function Store(name, address, phone, minCustomers, maxCustomers, averageCookieSale) {
+function Store(name, minCustomers, maxCustomers, averageCookieSale) {
   this.storeName = name;
-  this.address = address;
-  this.phone = phone;
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
   this.averageCookieSale = averageCookieSale;
@@ -77,11 +75,11 @@ function Store(name, address, phone, minCustomers, maxCustomers, averageCookieSa
 }
 
 var Stores = {};
-Stores.firstAndPike = new Store('First And Pike', '1212 1st ave N, Seattle, WA 98118', '(206)123-4567', 23, 65, 6.3);
-Stores.seaTacAirport = new Store('SeaTac Airport', '14643 14th st, Seattle, WA 98274', '(206)123-4589', 3, 24, 1.2);
-Stores.seattleCenter = new Store('Seattle Center', '12354 44th ave NE, Seattle, WA 98118', '(206)123-4285', 11, 38, 3.7);
-Stores.capitolHill = new Store('Capitol Hill', '123 5th ave W, Seattle, WA 98275', '(206)123-1948', 20, 38, 2.3);
-Stores.alki = new Store('Alki', '12354 6th ave SE, Seattle, WA 98240', '(206)123-4769', 2, 16, 4.6);
+Stores.firstAndPike = new Store('First And Pike', 23, 65, 6.3);
+Stores.seaTacAirport = new Store('SeaTac Airport', 3, 24, 1.2);
+Stores.seattleCenter = new Store('Seattle Center', 11, 38, 3.7);
+Stores.capitolHill = new Store('Capitol Hill', 20, 38, 2.3);
+Stores.alki = new Store('Alki', 2, 16, 4.6);
 
 for (key in Stores) {
   Stores[key].render();
@@ -116,23 +114,19 @@ var storeForm = document.getElementById('store-form');
 function storeFormSubmit(event){
   event.preventDefault();
 
-  if (!event.target.store_name.value || !event.target.address.value || !event.target.phone.value || !event.target.min_customers.value || !event.target.max_customers.value || !event.target.average_sales) {
+  if (!event.target.store_name.value || !event.target.min_customers.value || !event.target.max_customers.value || !event.target.average_sales) {
     alert('Please fill out all the fields!');
   };
   var storeName = event.target.store_name.value;
-  var address = event.target.address.value;
-  var phone = event.target.phone.value;
   var minCustomers = parseInt(event.target.min_customers.value);
   var maxCustomers = parseInt(event.target.max_customers.value);
   var averageCookieSale = parseInt(event.target.average_sales.value);
 
-  var NewStore = new Store(storeName, address, phone, minCustomers, maxCustomers, averageCookieSale);
+  var NewStore = new Store(storeName, minCustomers, maxCustomers, averageCookieSale);
 
   NewStore.render();
 
   event.target.store_name.value = null;
-  event.target.address.value = null;
-  event.target.phone.value = null;
   event.target.min_customers.value = null;
   event.target.max_customers.value = null;
   event.target.average_sales = null;
