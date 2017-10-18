@@ -75,12 +75,6 @@ button, .button {
   border-radius: 5px;
 }
 
-.button {
-  padding: 0.25em 0.5em;
-  font-size: 1.5em;
-  width: auto;
-}
-
 button:hover, .button:hover {
   background: #725f35;
 }
@@ -136,11 +130,41 @@ footer a:hover, footer a:active {
   color: #efefef;
 }
 
+fieldset {
+  padding: 1em 1.5em;
+}
+
+legend {
+  font-family: 'Pathway Gothic One', sans-serif;
+  font-size: 1.5em;
+  text-transform: uppercase;
+}
+
 input, textarea {
   margin-bottom: 20px;
-  width: 90%;
+  width: 100%;
   padding: 0.5em;
   border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.formButton {
+  font-size: 1.25em;
+  width: 100%;
+  margin-top: 0.25em;
+  margin-bottom: 1em;
+}
+
+.resetButton {
+  background-color: #725f35;
+  width: 100%;
+  margin-top: 0.25em;
+  margin-bottom: 1em;
+  font-size: 1.25em;
+}
+
+.resetButton:hover {
+  background-color: #423e33;
 }
 
 .featured-image {
@@ -270,6 +294,13 @@ input, textarea {
   }
   article {
     width: 45%;
+  }
+  legend {
+    font-size: 2em;
+  }
+#store-form {
+    width: 50%;
+    margin: auto;
   }
   .featured-image {
     width: 40%;

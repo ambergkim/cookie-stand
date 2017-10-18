@@ -15,6 +15,27 @@
       </nav>
       <h1 class="sHeader">Salmon Cookies Store Reports</h1>
     </header>
+    <section class="sectionGreen">
+      <form id="store-form">
+        <fieldset>
+          <legend>Basic Store info</legend>
+          <label for="name">Store Name:</label>
+          <input type="text" name="store_name" placeholder="Store Location Name" required>
+          <label for="address">Store Address:</label>
+          <input type="text" name="address" placeholder="Address" required>
+          <label for="phone">Phone Number:</label>
+          <input type="text" name="phone" placeholder="Phone Number" required>
+          <label for="min_customers">Minimum Number of Customers Per Hour:</label>
+          <input type="number" name="min_customers" placeholder="Minimum Customers Per Hour" required pattern="[0-9]">
+          <label for="max_customers">Maximum Number of Customers Per Hour:</label>
+          <input type="number" name="max_customers" placeholder="Maximum Customers Per Hour" required pattern="[0-9]">
+          <label for="average_sales">Average Cookie Sales Per Hour:</label>
+          <input type="number" name="average_sales" placeholder="Average Cookie Sale Per Hour" required pattern="[0-9]">
+          <button id="store-form-button" class="formButton" type="submit" form="store-form" value="submit">Add Store</button>
+        </fieldset>
+        <button id="reset-table" class="resetButton">Reset</button>
+      </form>
+    </section>
     <section id="report" class="row">
     </section>
     <section class="sectionPurple">
@@ -41,6 +62,6 @@
       <p>&copy; <a href="http://amberkimdesign.com">Amber Kim Design</a></p>
     </footer>
     <script type="text/javascript" src="scripts/stores.js"></script>
-    <script type="text/javascript" src="scripts/report.js"></script>
+    <script type="text/javascript" src="scripts/form-input.js"></script>
   </body>
 </html>
