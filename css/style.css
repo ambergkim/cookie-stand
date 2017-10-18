@@ -155,6 +155,18 @@ input, textarea {
   margin-bottom: 1em;
 }
 
+.resetButton {
+  background-color: #725f35;
+  width: 100%;
+  margin-top: 0.25em;
+  margin-bottom: 1em;
+  font-size: 1.25em;
+}
+
+.resetButton:hover {
+  background-color: #423e33;
+}
+
 .featured-image {
   width: 100%;
   height: 100%;

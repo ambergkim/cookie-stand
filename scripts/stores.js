@@ -161,3 +161,17 @@ function storeFormSubmit(event){
 //Event Listener
 storeForm.addEventListener('submit', storeFormSubmit);
 //Clear List or Reset Button
+var resetTable = document.getElementById('reset-table');
+resetTable.addEventListener('click', function() {
+  var i = 0;
+  for (key in Stores) {
+    i++;
+  }
+  console.log('Stores length: ' + i);
+  console.log('table length: ' + tableBody.childNodes.length);
+  for (var j = tableBody.childNodes.length; j > i + 1; j--) {
+    tableBody.removeChild(tableBody.lastChild);
+    console.log('j ' + 1);
+  }
+}
+);
