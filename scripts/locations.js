@@ -12,12 +12,10 @@ function StoreLocationInfo(name, address, phone) {
     div.appendChild(h3);
     var addressP = document.createElement('p');//CREATE address
     var addressText = document.createTextNode('Address: ' + this.address);
-    console.log('address:' + this.address);
     addressP.appendChild(addressText);
     div.appendChild(addressP);//END create min customer list item
     var phoneP = document.createElement('p');//CREATE max cust list item
     var phoneText = document.createTextNode('Phone: ' + this.phone);
-    console.log('phone:' + this.phone);
     phoneP.appendChild(phoneText);
     div.appendChild(phoneP);
     div.className += 'store';

@@ -24,6 +24,20 @@ var createTableHeader = function() {
 
 createTableHeader();
 
+var createTosserHeader = function() {
+  var headRow = document.createElement('tr');
+  for (var i = 0; i < tableHeader.length; i++){//load title cells
+    var headTime = tableHeader[i];
+    var cell = document.createElement('td');
+    var cellText = document.createTextNode(headTime);
+    cell.appendChild(cellText);
+    headRow.appendChild(cell);//append cells
+  };
+  table2Head.appendChild(headRow);//append row to table
+};
+
+createTosserHeader();
+
 function Store(name, minCustomers, maxCustomers, averageCookieSale) {
   this.storeName = name;
   this.minCustomers = minCustomers;
@@ -56,6 +70,34 @@ function Store(name, minCustomers, maxCustomers, averageCookieSale) {
     }
     this.hourlyCookies.push(this.dailyTotal);
   };
+  this.getTosser = function() {
+    var storeName = this.storeName;
+    var currentStoreRow = document.createElement('tr');
+    var nameTd = document.createElement('td');
+    var nameText = document.createTextNode(storeName);
+    nameTd.appendChild(nameText);
+    currentStoreRow.appendChild(nameTd);//add row title
+    var dailyTotal = 0;//the total cookies of the day
+    for (var i = 0; i < 15; i++){
+      var hourCustomers = Math.floor((this.hourlyCustomers[i]));
+      var hourTossers = Math.ceil(hourCustomers / 20);//calculate needed tossers
+      if (hourTossers === 1 || hourTossers === 0) {//minimum tossers is 2
+        hourTossers = 2;
+      }
+      if (dailyTotal < hourTossers) {//find the highest tossers needed at one point
+        dailyTotal = hourTossers;
+      };
+      var td = document.createElement('td');
+      var tdText = document.createTextNode(hourTossers);
+      td.appendChild(tdText);
+      currentStoreRow.appendChild(td);//add cell to row
+    };
+    var totalTd = document.createElement('td');
+    var totalText = document.createTextNode(dailyTotal);
+    totalTd.appendChild(totalText);
+    currentStoreRow.appendChild(totalTd);//add last cells to row
+    table2Body.appendChild(currentStoreRow);//add row to table body
+  };
   this.render = function() {
     this.getCustomers();
     this.getHourlyCookies();
@@ -71,6 +113,7 @@ function Store(name, minCustomers, maxCustomers, averageCookieSale) {
       tr.appendChild(td);
     }
     tableBody.appendChild(tr);
+    this.getTosser();
   };
 }
 
@@ -146,6 +189,9 @@ resetTable.addEventListener('click', function() {
   }
   for (var j = tableBody.childNodes.length; j > i + 1; j--) {
     tableBody.removeChild(tableBody.lastChild);
+  }
+  for (var k = table2Body.childNodes.length; k > i + 1; k--) {
+    table2Body.removeChild(table2Body.lastChild);
   }
 }
 );
