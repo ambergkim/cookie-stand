@@ -72,6 +72,12 @@ input {
   .order-form {
     flex-grow: 2;
   }
+  .width100 {
+    width: 100%;
+    flex-grow: 2;
+    text-align: center;
+    margin-bottom: 1em;
+  }
   #surpriseVideo {
     align-items: center;
     width: 90%;
