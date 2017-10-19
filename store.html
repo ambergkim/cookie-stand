@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Amber Kim: Cookie Stand Project</title>
+    <link rel=icon type="image/png" href="images/salmon-cookies-favicon.png" />
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Cardo|Pathway+Gothic+One" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/store.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <img id="logo" alt="salmon cookie logo" src="images/salmon-cookies-logo.png" />
+        <div id="mainTopNav">
+        <button type="button" class="icon" id="hamburger">&#9776;</button>
+        <div id="navLinks" class="topNav navHide">
+            <a href="index.html#promise">Our Promise</a>
+            <a href="index.html#culture">Our Culture</a>
+            <a href="index.html#franchise">Franchise</a>
+            <a href="index.html#about-us">About Us</a>
+            <a href="store.html">Store</a>
+            <a href="index.html#locations">Locations</a>
+            <a href="index.html#events">Events</a>
+        </div>
+        </div>
+      </nav>
+    </header>
+    <section id="surprise" class="row sectionGreen">
+      <h2>Working hard to get your fish!</h2>
+      <div id="surpriseVideo" class="row"><iframe width="560" height="315" src="https://www.youtube.com/embed/KwEi-gBCdF0" frameborder="0" allowfullscreen></iframe></div>
+      <h3>Need more shirts? Use the form again below:</h3>
+    </section>
+    <section id="product" class="row sectionPurple">
+      <img src="images/shirt.jpg" alt="salmon shirt" class="featured-image column" />
+      <form class="order-form column">
+        <fieldset>
+          <legend>Your Billing Information</legend>
+          <label for="name">Your Full Name:</label>
+          <input type="text" name="name" placeholder="Your Full Name" required>
+          <label for="email">Your Email:</label>
+          <input type="email" name="email" placeholder="name@email.com" required>
+          <label for="street">Street Address:</label>
+          <input type="text" name="street" placeholder="Street Address" required>
+          <label for="city">City</label>
+          <input type="text" name="city" placeholder="City" required>
+          <label for="state">State</label>
+          <input type="state" name="state" placeholder="State" required>
+          <label for="zip">Zip Code:</label>
+          <input type="text" name="zip" placeholder="Zip Code" required>
+          <label for="number">Number of Shirts:</label>
+          <input type="text" name="number" placeholder="Number of Shirts" required>
+          <label>Shirt Size:</label><br>
+          <label class="radio"><input type="radio" name="size" value="small" class="radioCircle"> small</label>
+          <label class="radio"><input type="radio" name="size" value="medium" class="radioCircle"> medium</label>
+          <label class="radio"><input type="radio" name="size" value="large" class="radioCircle"> large</label><br>
+          <label>Design:</label><br>
+          <label class="radio"><input type="radio" name="design" value="salmon" class="radioCircle"> salmon</label>
+          <label class="radio"><input type="radio" name="design" value="fish" class="radioCircle"> fish</label>
+          <label class="radio"><input type="radio" name="design" value="chinook" class="radioCircle"> chinook</label><br>
+          <label for="cc">Credit Card Number:</label>
+          <input type="text" name="cc" disabled>
+          <label for="month">Month/Year</label>
+          <input type="month" name="month" disabled>
+          <label for="security">Month/Year</label>
+          <input type="number" name="security" disabled>
+          <button type="submit" id="orderSubmit">Place Your Order</button>
+        </fieldset>
+      </form>
+      <div class="fishDesign">
+        <h2>Pick your fish design:</h2>
+        <div>
+          <h4>A. Salmon</h4>
+          <img src="images/salmon.png" alt="salmon" />
+          <h4>B. Chinook</h4>
+          <img src="images/fish.jpg" alt="salmon" />
+          <h4>C. Fish Art</h4>
+          <img src="images/chinook.jpg" alt="salmon" />
+        </div>
+      </div>
+    </section>
+    <footer>
+      <p>&copy; <a href="http://amberkimdesign.com">Amber Kim Design</a></p>
+    </footer>
+    <script type="text/javascript" src="scripts/navigation.js"></script>
+    <script type="text/javascript" src="scripts/order-form.js"></script>
+  </body>
+</html>

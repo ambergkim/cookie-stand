@@ -1,5 +1,3 @@
-console.log('initiate nav');
-
 var navButton = document.getElementById('hamburger');
 var navLinks = document.getElementById('navLinks');
 
