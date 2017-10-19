@@ -18,6 +18,10 @@ function StoreLocationInfo(name, address, phone) {
     var phoneText = document.createTextNode('Phone: ' + this.phone);
     phoneP.appendChild(phoneText);
     div.appendChild(phoneP);
+    var hoursOpenP = document.createElement('p');
+    var hoursOpenText = document.createTextNode('Daily, Mon-Sun: 6am-8pm');
+    hoursOpenP.appendChild(hoursOpenText);
+    div.appendChild(hoursOpenP);
     div.className += 'store';
     el.appendChild(div);
   };

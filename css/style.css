@@ -58,7 +58,7 @@ article {
   border: solid 2px #725f35;
   border-top-right-radius: 25%;
   border-bottom-left-radius: 25%;
-  padding: 3% 5% 10% 5%;
+  padding: 3% 10% 15% 10%;
   background-color: rgba(0, 0, 0, 0.5);
   box-shadow: -5px 5px 5px black;
 }
@@ -148,6 +148,52 @@ input, textarea {
   box-sizing: border-box;
 }
 
+.topNav {
+  display: flex;
+  font-family: 'Pathway Gothic One', sans-serif;
+  text-align: center;
+  flex-direction: column;
+  display: flex;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: rgba(17, 18, 12);
+  background-color: rgba(17, 18, 12, 0.3);
+  padding: 0.5em 0;
+}
+
+.topNav a {
+  font-size: 1.5em;
+  color: white;
+  padding: 0.75em;
+  width: 100%;
+}
+
+.topNav a:hover {
+  color: #efefef;
+}
+
+.topNav a:active {
+  color: #efefef;
+}
+
+.icon {
+  background: none;
+  border: none;
+}
+
+.icon:active {
+  background: none;
+}
+
+.icon:hover {
+  background: none;
+}
+
+.navHide {
+  display:none;
+}
+
 .formButton {
   font-size: 1.25em;
   width: 100%;
@@ -170,6 +216,16 @@ input, textarea {
 .featured-image {
   width: 100%;
   height: 100%;
+  border: solid 3px #11120c;
+  border-radius: 10%;
+  margin-bottom: 2em;
+}
+
+.thumb {
+  width: 175px;
+  height: 175px;
+  object-fit: cover left;
+  margin: 1em;
 }
 
 .row {
@@ -177,6 +233,7 @@ input, textarea {
   flex-grow: 1;
   flex-wrap: wrap;
   justify-content: space-around;
+  align-items: center;
 }
 
 .column {
@@ -254,10 +311,21 @@ input, textarea {
   footer {
     padding: 0.5em;
   }
+  .icon {
+    position: fixed;
+    padding: 0 0.2em 0.2em 0.2em;
+  }
+  .topNav {
+    padding: 0;
+    flex-direction: row;
+  }
+  .topNav a {
+    padding: 0.35em;
+  }
   .featured-image {
     width: 100%;
     height: 50%;
-    margin: auto;
+    /*margin: auto;*/
   }
   .store, .sales {
     width: 40%;
@@ -287,23 +355,45 @@ input, textarea {
 /**********DESKTOP*************/
 @media screen and (min-width: 1000px) {
   body{
-    font-size: 20px;
+    font-size: 16px;
+    line-height: 1.25;
   }
   h2 {
     font-size: 2em;
   }
   article {
-    width: 45%;
+    width: 40%;
+    padding: 5%;
+    margin: 0;
   }
   legend {
     font-size: 2em;
   }
-#store-form {
-    width: 50%;
+  .topNav {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0.5em 0;
+  }
+  .topNav a {
+    width: auto;
+    color: #11120C;
+    margin-left: 0.25em;
+    margin-right: 0.25em;
+  }
+  #hamburger {
+    display: none;
+  }
+  #store-form {
+    width: 40%;
     margin: auto;
   }
   .featured-image {
     width: 40%;
+    margin: 0;
   }
   .sales {
     width: 30%;
