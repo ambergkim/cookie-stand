@@ -6,9 +6,9 @@ var table2Body = document.getElementById('table2Body');
 
 var tableHeader = ['','6am','7am','8am','9am','10am','11am','12pm','1pm','2pm','3pm','4pm','5pm','6pm','7pm','8pm', 'Daily Location Total'];
 
-var hourlyTotals = [];
+var hourlyTotals = [];//total cookies for every hour
 
-var allStoreTotal = 0;
+var allStoreTotal = 0;//total cookies for the whole day and all stores
 
 var createTableHeader = function() {
   var headRow = document.createElement('tr');
@@ -160,14 +160,35 @@ function storeFormSubmit(event){
   if (!event.target.store_name.value || !event.target.min_customers.value || !event.target.max_customers.value || !event.target.average_sales) {
     alert('Please fill out all the fields!');
   };
-  var storeName = event.target.store_name.value;
-  var minCustomers = parseInt(event.target.min_customers.value);
-  var maxCustomers = parseInt(event.target.max_customers.value);
-  var averageCookieSale = parseInt(event.target.average_sales.value);
 
-  var NewStore = new Store(storeName, minCustomers, maxCustomers, averageCookieSale);
+  var newStoreName = event.target.store_name.value;
+  var newMinCustomers = parseInt(event.target.min_customers.value);
+  var newMaxCustomers = parseInt(event.target.max_customers.value);
+  var newAverageCookieSale = parseInt(event.target.average_sales.value);
 
-  NewStore.render();
+  var matchingStoreFound = false;
+
+  for (key in Stores) {
+    if (Stores[key].storeName.toLowerCase() === newStoreName.toLowerCase()) {
+      Stores[key].minCustomers = newMinCustomers;
+      Stores[key].maxCustomers = newMaxCustomers;
+      Stores[key].averageCookieSale = newAverageCookieSale;
+      matchingStoreFound = true;
+      for (var i = 0; i < tableBody.childNodes.length; i++) {
+        tableBody.deleteRow(i);
+        table2Body.deleteRow(i);
+      }
+      for (key in Stores) {
+        Stores[key].render();
+      }
+    }
+  }
+
+  if (!matchingStoreFound) {
+    var NewStore = new Store(newStoreName, newMinCustomers, newMaxCustomers, newAverageCookieSale);
+    Stores[newStoreName] = NewStore;
+    NewStore.render();
+  }
 
   event.target.store_name.value = null;
   event.target.min_customers.value = null;

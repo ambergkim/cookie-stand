@@ -1,0 +1,86 @@
+form {
+  width: 100%;
+}
+
+legend {
+  font-size: 2em;
+}
+
+label, input {
+  font-family: 'Cardo', serif;
+  font-size: 1.5em;
+  text-transform: none;
+  margin-bottom: 0;
+}
+
+input {
+  margin-bottom: 1em;
+}
+
+.fishDesign {
+  border: solid 1px white;
+  padding: 2em;
+  width: 100%;
+  background-color: #423E33;
+  margin-top: 5%;
+}
+
+.radio {
+  display: inline-block;
+}
+
+.radioCircle {
+  width: 1em;
+  height: 1em;
+}
+
+.order-form {
+  flex-direction: column;
+}
+
+.surpriseHide {
+  display: none;
+}
+
+#surprise > h2 {
+  text-align: center;
+  font-size: 2.5em;
+}
+
+#surpriseVideo {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+@media screen and (min-width: 1000px) {
+  label {
+    font-size: 1em;
+  }
+  input {
+    font-size: 1em;
+  }
+  .row {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .column {
+    width: 45%;
+  }
+  .featured-image {
+    margin-top: 1em;
+  }
+  .order-form {
+    flex-grow: 2;
+  }
+  .width100 {
+    width: 100%;
+    flex-grow: 2;
+    text-align: center;
+    margin-bottom: 1em;
+  }
+  #surpriseVideo {
+    align-items: center;
+    width: 90%;
+    flex-grow: 2;
+  }
+}
